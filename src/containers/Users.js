@@ -7,7 +7,7 @@ import { stateTypes, fetchUsers, selectUser } from '../store/users';
 import UserList from '../components/UserList';
 import User from '../components/User';
 
-class UsersWithSwitch extends Component {
+class Users extends Component {
   componentDidMount() {
     setTimeout(() => {
       this.props.fetchUsers();
@@ -34,7 +34,7 @@ class UsersWithSwitch extends Component {
 }
 
 // eslint-disable-next-line
-UsersWithSwitch.propTypes = {
+Users.propTypes = {
   stateType: PropTypes.string.isRequired,
   users: PropTypes.arrayOf(PropTypes.object).isRequired,
   user: PropTypes.arrayOf(PropTypes.object).isRequired,
@@ -56,4 +56,4 @@ export default connect(
       },
       dispatch,
     ),
-)(UsersWithSwitch);
+)(Users);

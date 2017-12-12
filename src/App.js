@@ -6,7 +6,7 @@ import {
   UIComponent,
 } from '@travel-cloud/react-component-library';
 
-import UsersWithSwitch from './containers/Users';
+import Users from './containers/Users';
 
 const App = () => (
   <UI>
@@ -14,7 +14,7 @@ const App = () => (
       <UILogo>SDD</UILogo>
     </UISidebar>
     <UIComponent>
-      <UsersWithSwitch />
+      <Users />
     </UIComponent>
   </UI>
 );
