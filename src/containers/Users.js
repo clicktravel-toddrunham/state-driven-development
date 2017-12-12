@@ -7,22 +7,23 @@ import { stateTypes, fetchUsers, selectUser } from '../store/users';
 import UserList from '../components/UserList';
 import User from '../components/User';
 
-class Users extends Component {
+class UsersWithSwitch extends Component {
   componentDidMount() {
     setTimeout(() => {
       this.props.fetchUsers();
-    }, 2000);
+    }, 1000);
   }
 
   componentHasStateType = () => {
     const { stateType, users, user } = this.props;
-    return {
-      [stateTypes.FETCHING_USERS]: 'Loading...',
-      [stateTypes.FETCHED_USERS]: (
-        <UserList users={users} selectUser={this.handleSelectUser} />
-      ),
-      [stateTypes.SELECTED_USER]: <User user={user} />,
-    }[stateType];
+    switch (stateType) {
+      case stateTypes.FETCHED_USERS:
+        return <UserList users={users} selectUser={this.handleSelectUser} />;
+      case stateTypes.SELECTED_USER:
+        return <User user={user} />;
+      default:
+        return 'Loading...';
+    }
   };
 
   handleSelectUser = name => this.props.selectUser(name);
@@ -33,7 +34,7 @@ class Users extends Component {
 }
 
 // eslint-disable-next-line
-Users.propTypes = {
+UsersWithSwitch.propTypes = {
   stateType: PropTypes.string.isRequired,
   users: PropTypes.arrayOf(PropTypes.object).isRequired,
   user: PropTypes.arrayOf(PropTypes.object).isRequired,
@@ -55,4 +56,4 @@ export default connect(
       },
       dispatch,
     ),
-)(Users);
+)(UsersWithSwitch);
