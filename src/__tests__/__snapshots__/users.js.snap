@@ -1,0 +1,120 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Users container should render Users correctly with the fetched users state 1`] = `
+<ul
+  className="ui-grid list-group "
+>
+  <li
+    className="pull-left"
+  >
+    <p
+      className="pull-left"
+      style={
+        Object {
+          "marginBottom": "15px",
+          "width": "20%",
+        }
+      }
+    >
+      <span
+        className="text-large link"
+        onClick={[Function]}
+      >
+        Tom
+      </span>
+      <br />
+      <span
+        className="text-muted"
+      >
+        name
+      </span>
+    </p>
+  </li>
+  <li
+    className="pull-left"
+  >
+    <p
+      className="pull-left"
+      style={
+        Object {
+          "marginBottom": "15px",
+          "width": "20%",
+        }
+      }
+    >
+      <span
+        className="text-large link"
+        onClick={[Function]}
+      >
+        Chris
+      </span>
+      <br />
+      <span
+        className="text-muted"
+      >
+        name
+      </span>
+    </p>
+  </li>
+  <li
+    className="pull-left"
+  >
+    <p
+      className="pull-left"
+      style={
+        Object {
+          "marginBottom": "15px",
+          "width": "20%",
+        }
+      }
+    >
+      <span
+        className="text-large link"
+        onClick={[Function]}
+      >
+        Sam
+      </span>
+      <br />
+      <span
+        className="text-muted"
+      >
+        name
+      </span>
+    </p>
+  </li>
+</ul>
+`;
+
+exports[`Users container should render Users correctly with the fetching users state 1`] = `"Loading..."`;
+
+exports[`Users container should render Users correctly with the selected user state 1`] = `
+<ul
+  className="ui-grid list-group "
+>
+  <li
+    className="pull-left"
+  >
+    <p
+      className="pull-left"
+      style={
+        Object {
+          "marginBottom": "15px",
+          "width": "20%",
+        }
+      }
+    >
+      <span
+        className="text-large"
+      >
+        Tom
+      </span>
+      <br />
+      <span
+        className="text-muted"
+      >
+        name
+      </span>
+    </p>
+  </li>
+</ul>
+`;

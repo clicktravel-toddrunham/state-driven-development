@@ -1,0 +1,22 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "plugins": [
+    "prettier",
+    "immutable",
+    "react"
+  ],
+  "rules": {
+    "immutable/no-let": 2,
+    "immutable/no-mutation": 2,
+    "react/jsx-filename-extension": "off",
+    "jsx-a11y/anchor-is-valid": [ "error", {
+      "specialLink": [ "hrefLeft", "hrefRight" ],
+      "aspects": [ "noHref", "invalidHref", "preferButton" ]
+    }]
+  }
+}
