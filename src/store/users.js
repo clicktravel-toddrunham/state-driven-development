@@ -11,8 +11,8 @@ const stateTypes = {
 
 const initialState = {
   stateType: stateTypes.FETCHING_USERS,
-  users: [],
-  user: [],
+  users: [], // These could probably be in a 'data' object, may as well use this 
+  user: [], // as an opportunity to give our stores more consistent structure
 };
 
 const fetchUsers = () => ({
