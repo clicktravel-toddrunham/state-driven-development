@@ -29,71 +29,83 @@ is rudimental.
 #### Global Store
 
 Start off by defining your action and state types, whether it's from BDD feature files
-or from scratch. Use these as a jump off point to build your reducers. A complete example is below:
+or from scratch. Use these as a jump off point to build your reducers.
 
-```jsx
-const actionTypes = {
-  FETCH_USERS: 'FETCH_USERS',
-  SELECT_USER: 'SELECT_USER',
-};
+<details>
+  <summary>
+    Click to view a complete code example
+  </summary>
 
-const stateTypes = {
-  FETCHING_USERS: 'FETCHING_USERS',
-  FETCHED_USERS: 'FETCHED_USERS',
-  SELECTED_USER: 'SELECTED_USER',
-};
+  ```jsx
+  const actionTypes = {
+    FETCH_USERS: 'FETCH_USERS',
+    SELECT_USER: 'SELECT_USER',
+  };
 
-const initialState = {
-  _stateType: stateTypes.FETCHING_USERS,
-  data: {
-    users: [],
-    user: [],
-  },
-};
+  const stateTypes = {
+    FETCHING_USERS: 'FETCHING_USERS',
+    FETCHED_USERS: 'FETCHED_USERS',
+    SELECTED_USER: 'SELECTED_USER',
+  };
 
-const fetchUsers = () => ({
-  type: actionTypes.FETCH_USERS,
-});
+  const initialState = {
+    _stateType: stateTypes.FETCHING_USERS,
+    data: {
+      users: [],
+      user: [],
+    },
+  };
 
-const selectUser = name => ({
-  type: actionTypes.SELECT_USER,
-  name,
-});
+  const fetchUsers = () => ({
+    type: actionTypes.FETCH_USERS,
+  });
 
-const users = (state = initialState, action) => {
-  switch (action.type) {
-    case actionTypes.FETCH_USERS:
-      return {
-        ...state,
-        _stateType: stateTypes.FETCHED_USERS,
-        data: {
-          ...state.data,
-          users: [{ name: 'Tom' }, { name: 'Chris' }, { name: 'Sam' }],
-        },
-      };
-    case actionTypes.SELECT_USER:
-      return {
-        ...state,
-        _stateType: stateTypes.SELECTED_USER,
-        data: {
-          ...state.data,
-          user: state.data.users.filter(user => user.name === action.name)
-        },
-      };
-    default:
-      return state;
-  }
-};
+  const selectUser = name => ({
+    type: actionTypes.SELECT_USER,
+    name,
+  });
 
-export { actionTypes, stateTypes, fetchUsers, selectUser, initialState };
+  const users = (state = initialState, action) => {
+    switch (action.type) {
+      case actionTypes.FETCH_USERS:
+        return {
+          ...state,
+          _stateType: stateTypes.FETCHED_USERS,
+          data: {
+            ...state.data,
+            users: [{ name: 'Tom' }, { name: 'Chris' }, { name: 'Sam' }],
+          },
+        };
+      case actionTypes.SELECT_USER:
+        return {
+          ...state,
+          _stateType: stateTypes.SELECTED_USER,
+          data: {
+            ...state.data,
+            user: state.data.users.filter(user => user.name === action.name)
+          },
+        };
+      default:
+        return state;
+    }
+  };
 
-export default users;
-```
+  export { actionTypes, stateTypes, fetchUsers, selectUser, initialState };
+
+  export default users;
+  ```
+
+</details>
 
 #### React Container
 
 Think of your container as a router, it takes a condition (state type) and determines what
-components need to be rendered using a switch statement as below:
+components need to be rendered using a switch statement.
+
+<details>
+  <summary>
+    Click to view a complete code example
+  </summary>
 
 ```jsx
 import React, { Component } from 'react';
@@ -157,10 +169,17 @@ export default connect(
 )(Users);
 ```
 
+</details>
+
 #### Snapshot testing
 
 Use snapshot testing to keep a concise record of what the application tree
-is supposed to look like with a state type applied to it, like below:
+is supposed to look like with a state type applied to it.
+
+<details>
+  <summary>
+    Click to view a complete code example
+  </summary>
 
 ```jsx
 import React from 'react';
@@ -197,5 +216,7 @@ describe('Users container', () => {
   });
 });
 ```
+
+</details>
 
 A full working example of the above is contained within this repository.
