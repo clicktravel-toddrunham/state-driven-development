@@ -36,6 +36,8 @@ or from scratch. Use these as a jump off point to build your reducers.
     Click to view a complete code example
   </summary>
 
+  ###
+
   ```jsx
   const actionTypes = {
     FETCH_USERS: 'FETCH_USERS',
@@ -106,6 +108,8 @@ components need to be rendered using a switch statement.
   <summary>
     Click to view a complete code example
   </summary>
+
+###
 
 ```jsx
 import React, { Component } from 'react';
@@ -181,6 +185,8 @@ is supposed to look like with a state type applied to it.
     Click to view a complete code example
   </summary>
 
+###
+
 ```jsx
 import React from 'react';
 import configureMockStore from 'redux-mock-store';
@@ -218,5 +224,7 @@ describe('Users container', () => {
 ```
 
 </details>
+
+##
 
 A full working example of the above is contained within this repository.
