@@ -32,7 +32,7 @@ is rudimental.
 #### Store data organisation
 
 As state is the foundation for building applications with SDD, we suggest organising your store objects
-to increase visibility. For example prefixing the state type for each domain keeps it's current state
+to increase visibility. For example prefixing the state type for each domain with an underscore keeps it's current state
 highly visible when testing, as seen below:
 
 ```jsx
