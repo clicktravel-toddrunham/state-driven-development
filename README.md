@@ -17,12 +17,45 @@ with the state types creating a path through the tree to render the correct UI.
 Because the path is now so well defined and contained by the state type,
 it can be easily tested using snapshots.
 
+#### Unidirectional data flow
+
+The above image utilises a unidirectional data flow model. SDD aids this by highlighting
+clear data flows within the application, reducing cognitive load and enabling the application
+to be extended with additional state types very easily.
+
 #### Ties with BDD
 
 When you start building your application using SDD, you start to realise that action
 and state types are basically behaviours, and because of this tying in BDD techniques
 is rudimental.
 
+#### Store data organisation
+
+As state is the foundation for building applications with SDD, we suggest organising your store objects
+to increase visibility. For example prefixing the state type for each domain keeps it's current state
+highly visible when testing, as seen below:
+
+```jsx
+{
+  users: {
+    _stateType: 'FETCHED_USERS',
+    data: {
+      users: [
+        {
+          name: 'Tom'
+        },
+        {
+          name: 'Chris'
+        },
+        {
+          name: 'Sam'
+        }
+      ],
+      user: []
+    }
+  }
+}
+```
 
 ### Implementation (Using React + Redux)
 
@@ -228,5 +261,3 @@ describe('Users container', () => {
 ##
 
 A full working example of the above is contained within this repository.
-
-### Unidirectional data flow
