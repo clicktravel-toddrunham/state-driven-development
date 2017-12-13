@@ -43,7 +43,7 @@ const users = (state = initialState, action) => {
         _stateType: stateTypes.SELECTED_USER,
         data: {
           ...state.data,
-          user: state.data.users.filter(user => user.name === action.name)
+          user: state.data.users.filter(user => user.name === action.name),
         },
       };
     default:

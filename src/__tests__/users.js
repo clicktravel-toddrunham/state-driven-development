@@ -17,12 +17,16 @@ describe('Users container', () => {
     expect(tree).toMatchSnapshot();
   });
   it('should render Users correctly with the fetched users state', () => {
-    const store = mockStore({ users: { ...initialState, _stateType: 'FETCHED_USERS', data: { users } } });
+    const store = mockStore({
+      users: { ...initialState, _stateType: 'FETCHED_USERS', data: { users } },
+    });
     const tree = renderer.create(<Users store={store} />).toJSON();
     expect(tree).toMatchSnapshot();
   });
   it('should render Users correctly with the selected user state', () => {
-    const store = mockStore({ users: { ...initialState, _stateType: 'SELECTED_USER', data: { user } } });
+    const store = mockStore({
+      users: { ...initialState, _stateType: 'SELECTED_USER', data: { user } },
+    });
     const tree = renderer.create(<Users store={store} />).toJSON();
     expect(tree).toMatchSnapshot();
   });
