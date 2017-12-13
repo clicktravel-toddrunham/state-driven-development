@@ -31,7 +31,7 @@ is rudimental.
 Start off by defining your action and state types, whether it's from BDD feature files
 or from scratch. Use these as a jump off point to build your reducers. A complete example is below:
 
-```
+```jsx
 const actionTypes = {
   FETCH_USERS: 'FETCH_USERS',
   SELECT_USER: 'SELECT_USER',
