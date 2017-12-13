@@ -44,9 +44,9 @@ Users.propTypes = {
 
 export default connect(
   ({ users }) => ({
-    stateType: users.stateType,
-    users: users.users,
-    user: users.user,
+    stateType: users._stateType,
+    users: users.data.users,
+    user: users.data.user,
   }),
   dispatch =>
     bindActionCreators(

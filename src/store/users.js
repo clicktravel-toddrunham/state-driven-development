@@ -10,9 +10,11 @@ const stateTypes = {
 };
 
 const initialState = {
-  stateType: stateTypes.FETCHING_USERS,
-  users: [], // These could probably be in a 'data' object, may as well use this 
-  user: [], // as an opportunity to give our stores more consistent structure
+  _stateType: stateTypes.FETCHING_USERS,
+  data: {
+    users: [],
+    user: [],
+  },
 };
 
 const fetchUsers = () => ({
@@ -29,14 +31,20 @@ const users = (state = initialState, action) => {
     case actionTypes.FETCH_USERS:
       return {
         ...state,
-        stateType: stateTypes.FETCHED_USERS,
-        users: [{ name: 'Tom' }, { name: 'Chris' }, { name: 'Sam' }],
+        _stateType: stateTypes.FETCHED_USERS,
+        data: {
+          ...state.data,
+          users: [{ name: 'Tom' }, { name: 'Chris' }, { name: 'Sam' }],
+        },
       };
     case actionTypes.SELECT_USER:
       return {
         ...state,
-        stateType: stateTypes.SELECTED_USER,
-        user: state.users.filter(user => user.name === action.name),
+        _stateType: stateTypes.SELECTED_USER,
+        data: {
+          ...state.data,
+          user: state.data.users.filter(user => user.name === action.name)
+        },
       };
     default:
       return state;
