@@ -228,3 +228,5 @@ describe('Users container', () => {
 ##
 
 A full working example of the above is contained within this repository.
+
+### Unidirectional data flow
