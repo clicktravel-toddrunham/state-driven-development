@@ -3,7 +3,7 @@
 ### Introduction
 
 SDD is a development process where the application is designed and built
-from the state down, with each domain (I.E Users, Blog Posts) being given a list of action and state types
+from the state up, with each domain (I.E Users, Blog Posts) being given a list of action and state types
 that can be applied to it. These types are defined as a first step in the development process,
 hence 'State Driven Development'. By doing this you clearly document how your application works and also gives each
 state type a clear path through the application tree.
@@ -160,7 +160,7 @@ export default connect(
 #### Snapshot testing
 
 Use snapshot testing to keep a concise record of what the application tree
-is supposed to look like with a state type applied to it like below:
+is supposed to look like with a state type applied to it, like below:
 
 ```jsx
 import React from 'react';
