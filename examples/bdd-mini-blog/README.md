@@ -5,11 +5,7 @@ A small blog repo to indicate how SDD could be used with BDD and whether
 ## BEHAVIOURS
 
 <details>
-  <summary>
-
-### Feature: Readers can view blog posts
-
-  </summary>
+  <summary>### Feature: Readers can view blog posts</summary>
 
 #### Scenario: The reader can view all posts
 * [ACTION:FETCH_POSTS](#) A reader lands on the home page
