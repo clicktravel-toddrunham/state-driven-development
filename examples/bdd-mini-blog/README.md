@@ -1,3 +1,10 @@
+# BDD Mini Blog
+
+A small blog repo to indicate how SDD could be used with BDD and whether
+it is viable.
+
+## BEHAVIOURS
+
 ### Feature: Readers can view blog posts
 
 #### Scenario: The reader can view all posts
