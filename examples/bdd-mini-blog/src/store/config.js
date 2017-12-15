@@ -1,10 +1,10 @@
 import { createStore, combineReducers } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-import users from './users';
+import posts from './posts';
 
 const reducers = combineReducers({
-  users,
+  posts,
 });
 
 const configureStore = () => createStore(
