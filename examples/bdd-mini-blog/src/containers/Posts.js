@@ -11,7 +11,7 @@ class Posts extends Component {
   componentDidMount() {
     setTimeout(() => {
       this.props.fetchPosts();
-    }, 1000);
+    });
   }
 
   componentHasStateType = () => {

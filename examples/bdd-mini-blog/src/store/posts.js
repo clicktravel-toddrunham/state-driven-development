@@ -1,4 +1,5 @@
 const actionTypes = {
+  SWITCH_STATE_TYPE: 'SWITCH_STATE_TYPE',
   FETCH_POSTS: 'FETCH_POSTS',
   SELECT_POST: 'SELECT_POST',
   DELETE_POST: 'DELETE_POST',
@@ -16,9 +17,24 @@ const stateTypes = {
 
 const initialState = {
   _stateType: stateTypes.FETCHING_POSTS,
+  _availableStateTypes: stateTypes,
   data: {
-    posts: [],
-    post: [],
+    posts: [
+      {
+        id: 1,
+        title: 'Blog title',
+        content: 'Content here...',
+        author: 'author name',
+      },
+    ],
+    post: [
+      {
+        id: 1,
+        title: 'Blog title',
+        content: 'Content here...',
+        author: 'author name',
+      },
+    ],
   },
 };
 
@@ -31,8 +47,13 @@ const selectPost = id => ({
   id,
 });
 
-const users = (state = initialState, action) => {
+const posts = (state = initialState, action) => {
   switch (action.type) {
+    case actionTypes.SWITCH_STATE_TYPE:
+      return {
+        ...state,
+        _stateType: stateTypes[action.stateType],
+      };
     case actionTypes.FETCH_POSTS:
       return {
         ...state,
@@ -41,10 +62,16 @@ const users = (state = initialState, action) => {
           ...state.data,
           posts: [
             {
-              id: 1, title: 'Blog post one', content: 'Content here...', author: 'Chris',
+              id: 1,
+              title: 'Blog post one',
+              content: 'Content here...',
+              author: 'Chris',
             },
             {
-              id: 2, title: 'Blog post two', content: 'Content here...', author: 'Sam',
+              id: 2,
+              title: 'Blog post two',
+              content: 'Content here...',
+              author: 'Sam',
             },
           ],
         },
@@ -65,4 +92,4 @@ const users = (state = initialState, action) => {
 
 export { actionTypes, stateTypes, fetchPosts, selectPost, initialState };
 
-export default users;
+export default posts;

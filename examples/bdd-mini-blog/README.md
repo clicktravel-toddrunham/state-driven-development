@@ -1,6 +1,12 @@
 # BDD Mini Blog
 
-A small blog repo to indicate how SDD could be used with BDD and whether
+A small blog repo to indicate how SDD could be used with BDD and whether it could integrate
+with it.
+
+## State type URIs
+
+To test a specific state type add `/state:STATE_TYPE` I.E `/state:FETCHED_POSTS`
+to the URL. This also activates a menu list of the available state types.
 
 ## BEHAVIOURS
 
@@ -25,6 +31,7 @@ Scenario: The reader can delete a post
 Scenario: The reader can add a post
 * [ACTION:ADD_POST](#) A reader clicks the add a post link
 * [STATE:ADDING_POST](#) The add post page is shown
+-
 * [ACTION:SUBMIT_POST](#) A reader submits a post
 * [STATE:FETCHED_POSTS](#) The posts are shown
 

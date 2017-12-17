@@ -6,10 +6,7 @@ import { UIList } from '@travel-cloud/react-component-library';
 const PostList = ({ posts, selectPost }) => (
   <UIList.Grid
     items={posts}
-    keyMap={[
-      { key: 'id', onClick: selectPost },
-      { key: 'title' },
-    ]}
+    keyMap={[{ key: 'id', onClick: selectPost }, { key: 'title' }]}
   />
 );
 
